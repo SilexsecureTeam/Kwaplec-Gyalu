@@ -25,17 +25,17 @@
 <body class="font-sans bg-white text-gray-900">
     <!-- Header -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="mx-auto px-[7%] flex items-center justify-between py-0 shadow">
-            <img src="assets/logo.png" alt="logo" class="w-[140px]" />
-            <div class="relative w-[33%]">
+        <div class="mx-auto px-[3%] md:px-[7%] flex items-center justify-between py-0 shadow">
+            <img src="assets/logo.png" alt="logo" class="w-[110px] md:w-[140px] -ml-[35px] md:ml-0" />
+            <div class="relative w-[80%] m-auto mr-4 md:mr-auto md:w-[33%]">
                 <img src="assets/search.png" alt="search" class="absolute mt-[14px] ml-[8px] w-[18px]">
                 <input placeholder="Search" class="px-7 py-2.5 opacity-50 border w-full rounded-[4px]" />
             </div>
             <nav class="hidden md:flex justify-between text-sm font-normal w-[30%]">
-                <a href="#" class="hover:text-purple-600 font-semibold">Home</a>
-                <a href="#" class="hover:text-purple-600">About</a>
-                <a href="#" class="hover:text-purple-600">Contact Us</a>
-                <a href="#" class="hover:text-purple-600">Blog</a>
+                <a href="#" class="hover:underline font-semibold">Home</a>
+                <a href="#" class="hover:underline">About</a>
+                <a href="#" class="hover:underline">Contact Us</a>
+                <a href="#" class="hover:underline">Blog</a>
             </nav>
             <div class="hidden md:flex justify-around w-[12.5%]">
                 <img src="assets/heart1.png" alt="heart" class="w-[24px] h-[24px]" />
@@ -46,42 +46,41 @@
         </div>
         <!-- Mobile Menu -->
         <div id="mobileMenu" class="hidden md:hidden px-4 py-2 space-y-2 bg-white">
-            <a href="#" class="block hover:text-purple-600">Home</a>
-            <a href="#" class="block hover:text-purple-600">Shop</a>
-            <a href="#" class="block hover:text-purple-600">Categories</a>
-            <a href="#" class="block hover:text-purple-600">Blog</a>
-            <a href="#" class="block hover:text-purple-600">Contact</a>
+            <a href="#" class="block hover:underline">Home</a>
+            <a href="#" class="block hover:underline">About</a>
+            <a href="#" class="block hover:underline">Contact Us</a>
+            <a href="#" class="block hover:underline">Blog</a>
         </div>
     </header>
     <div
-        class="bg-[#4B2C7A] w-full text-white text-[15px] playfair flex items-center justify-between px-[10%] md:pr-[30%] py-[18px]">
-        <div class="flex items-center gap-2 ml-[10px] opacity-[0.85]">
+        class="bg-[#4B2C7A] w-full text-white text-[13.5px] md:text-[15px] playfair flex items-center justify-between md:px-[10%] px-[3%] md:pr-[30%] py-[18px]">
+        <div class="flex items-center gap-0.5 md:gap-2 md:ml-[10px] opacity-[0.85]">
             <img src="assets/necklace.png" alt="" class="w-[17px] h-[17px]">
             <p>Necklaces</p>
         </div>
-        <div class="flex items-center gap-2 opacity-[0.85]">
+        <div class="flex items-center gap-0.5 md:gap-2 opacity-[0.85]">
             <img src="assets/earing.png" alt="" class="w-[17px] h-[17px]">
             <p>Earings</p>
         </div>
-        <div class="flex items-center gap-2 opacity-[0.85]">
+        <div class="flex items-center gap-0.5 md:gap-2 opacity-[0.85]">
             <img src="assets/ring.png" alt="" class="w-[17px] h-[17px]">
             <p>Rings</p>
         </div>
-        <div class="flex items-center gap-2 opacity-[0.85]">
+        <div class="flex items-center gap-0.5 md:gap-2 opacity-[0.85]">
             <img src="assets/bracelet.png" alt="" class="w-[17px] h-[17px]">
             <p>Bracelets</p>
         </div>
-        <div class="flex items-center gap- opacity-[0.85]">
+        <div class="flex items-center opacity-[0.85]">
             <p>FAQ</p>
         </div>
     </div>
 
     <!-- Hero Section -->
-    <section class="flex justify-between items-center bg-[#E5E5E5] pl-[10%]">
+    <section class="flex justify-between items-center bg-[#E5E5E5] pl-[3%] md:pl-[10%]  py-10 md:py-0">
         <div class="max-w-[40%]">
             <h1 class="text-5xl font-normal mb-10 text-[#4B2C7A] monoton font-monoton">Jewelry that <br> tells <br>
                 your story</h1>
-            <button class="text-[#4B2C7A] border px-6 py-2 text-[14px] font-bold rounded-[4px] hover:bg-purple-600"
+            <button class="text-[#4B2C7A] border px-6 py-2 text-[14px] font-bold rounded-[4px]"
                 style="border: 1px solid #4B2C7A;">Shop Now</button>
         </div>
         <div class="max-w-[55%]">
@@ -90,47 +89,50 @@
     </section>
 
     <section class="flex-col md:flex md:flex-row justify-between">
-        <div class="w-[50%] p-4">
+        <div class="w-[100%] md:w-[50%] md:p-4 mobile-width-full">
             <div class="flex items-center justify-between w-full">
-                <img src="assets/neck1.png" alt="Necklaces" class="" />
-                <div>
+                <div class="w-[50%] md:w-auto">
+                    <img src="assets/neck1.png" alt="Necklaces" class="w-full" />
+                </div>
+                <div class="w-[50%] md:w-auto">
                     <h2 class="text-[26px] font-semibold">Necklaces</h2>
                     <p class="text-[15px] text-[#909090] mt-2">Incredibly powerful CPUs, GPUs, and an SSD with
                         integrated I/O will redefine your PlayStation
                         experience.</p>
                 </div>
             </div>
-            <div class="flex">
-                <div class="w-[50%] flex items-center gap-3">
-                    <img src="assets/neck2.png" alt="Necklaces" class="mb-4" />
-                    <div>
+            <div class="flex items-center justify-between">
+                <div class="w-[50%] flex items-center gap-1 md:gap-3">
+                    <img src="assets/neck2.png" alt="Necklaces" class="md:mb-4" />
+                    <div class="-ml-6 md:ml-auto">
                         <h2 class="text-[18px] font-normal">Rings</h2>
                         <p class="text-[14px] text-[#909090] mt-2">Computational audio. Listen, it's powerful</p>
                     </div>
                 </div>
-                <div class="w-[50%] relative text-white">
-                    <img src="assets/braceletbg.png" alt="Necklaces" class="mb-4" />
-                    <div class="absolute top-[35%] max-w-[50%] right-2">
+                <div class="w-[43%] md:w-[50%] relative text-white">
+                    <img src="assets/braceletbg.png" alt="Necklaces" class="md:mb-4 w-full" />
+                    <div class="absolute top-[20%] md:top-[35%] w-[70%] md:max-w-[50%] right-2">
                         <h2 class="text-[18px] font-normal ">Bracelets</h2>
                         <p class="text-[14px] text-[#909090]">An immersive way to experience entertainment</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="w-[50%] pl-6 text-black text-3xl font-normal flex justify-between items-center">
-            <div class="w-[50%]">
+        <div
+            class="w-[100%] -mt-[35px] md:mt-0 md:w-[50%] pl-6 text-black text-3xl font-normal flex justify-between items-center">
+            <div class="w-[57%] md:w-[50%]">
                 <h2 class="text-[40px] mb-3 font-light">Earrings</h2>
                 <p class="text-[14px] text-[#909090] leading-[1.5]">The new 15‑inch MacBook Air makes room for more of
                     what you love with a spacious Liquid Retina display.</p>
                 <button class="mt-4 text-black text-[14px] font-medium border px-7 py-1 rounded-[4px]">Shop Now</button>
             </div>
-            <div class="50%">
+            <div class="w-[40%] md:w-auto">
                 <img src="assets/big-earing.png" alt="Earrings" class="mb-4" />
             </div>
         </div>
     </section>
 
-    <section class="py-10 px-[10%] playfair">
+    <section class="py-10 px-[4%] md:px-[10%] playfair">
         <div>
             <h2 class="text-2xl font-medium mb-6">Browse By Category</h2>
         </div>
@@ -162,10 +164,10 @@
         </div>
     </section>
 
-    <section class="py-10 px-[10%] text-[15px]">
+    <section class="py-10 px-[4%] md:px-[10%] text-[15px]">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-7">
             <div class="bg-white rounded-[15px] shadow relative">
-                <div class="absolute flex items-center gap-2 right-3 top-28">
+                <div class="absolute flex items-center gap-2 right-3 top-16 md:top-28">
                     <div class="bg-white p-1.5 rounded-[50%] cursor-pointer">
                         <img src="assets/sm-heart.png" alt="">
                     </div>
@@ -176,7 +178,7 @@
                         <img src="assets/sm-cart.png" alt="">
                     </div>
                 </div>
-                <img src="assets/pr1.png" alt="Product" />
+                <img src="assets/pr1.png" alt="Product" class="w-full" />
                 <div class="p-2">
                     <div class="flex justify-between items-center w-[94%]">
                         <p class="text-[#4B2C7A] font-bold">Lorem Ipsium</p>
@@ -190,7 +192,7 @@
                 </div>
             </div>
             <div class="bg-white rounded-[15px] shadow relative">
-                <div class="absolute flex items-center gap-2 right-3 top-28">
+                <div class="absolute flex items-center gap-2 right-3 top-16 md:top-28">
                     <div class="bg-white p-1.5 rounded-[50%] cursor-pointer">
                         <img src="assets/sm-heart.png" alt="">
                     </div>
@@ -201,7 +203,7 @@
                         <img src="assets/sm-cart.png" alt="">
                     </div>
                 </div>
-                <img src="assets/pr2.png" alt="Product" />
+                <img src="assets/pr2.png" alt="Product" class="w-full" />
                 <div class="p-2">
                     <div class="flex justify-between items-center w-[94%]">
                         <p class="text-[#4B2C7A] font-bold">Lorem Ipsium</p>
@@ -215,7 +217,7 @@
                 </div>
             </div>
             <div class="bg-white rounded-[15px] shadow relative">
-                <div class="absolute flex items-center gap-2 right-3 top-28">
+                <div class="absolute flex items-center gap-2 right-3 top-16 md:top-28">
                     <div class="bg-white p-1.5 rounded-[50%] cursor-pointer">
                         <img src="assets/sm-heart.png" alt="">
                     </div>
@@ -226,7 +228,7 @@
                         <img src="assets/sm-cart.png" alt="">
                     </div>
                 </div>
-                <img src="assets/pr3.png" alt="Product" />
+                <img src="assets/pr3.png" alt="Product" class="w-full" />
                 <div class="p-2">
                     <div class="flex justify-between items-center w-[94%]">
                         <p class="text-[#4B2C7A] font-bold">Lorem Ipsium</p>
@@ -240,7 +242,7 @@
                 </div>
             </div>
             <div class="bg-white rounded-[15px] shadow relative">
-                <div class="absolute flex items-center gap-2 right-3 top-28">
+                <div class="absolute flex items-center gap-2 right-3 top-16 md:top-28">
                     <div class="bg-white p-1.5 rounded-[50%] cursor-pointer">
                         <img src="assets/sm-heart.png" alt="">
                     </div>
@@ -251,7 +253,7 @@
                         <img src="assets/sm-cart.png" alt="">
                     </div>
                 </div>
-                <img src="assets/pr4.png" alt="Product" />
+                <img src="assets/pr4.png" alt="Product" class="w-full" />
                 <div class="p-2">
                     <div class="flex justify-between items-center w-[94%]">
                         <p class="text-[#4B2C7A] font-bold">Lorem Ipsium</p>
@@ -268,11 +270,11 @@
         </div>
     </section>
 
-    <section class="py-10 px-[10%] text-[15px]">
+    <section class="py-10 px-[4%] md:px-[10%] text-[15px]">
         <h5 class="text-2xl font-medium mb-6">New Arrivals</h5>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-7">
             <div class="bg-white rounded-[15px] shadow relative">
-                <div class="absolute flex items-center gap-2 right-3 top-28">
+                <div class="absolute flex items-center gap-2 right-3 top-16 md:top-28">
                     <div class="bg-white p-1.5 rounded-[50%] cursor-pointer">
                         <img src="assets/sm-heart.png" alt="">
                     </div>
@@ -283,7 +285,7 @@
                         <img src="assets/sm-cart.png" alt="">
                     </div>
                 </div>
-                <img src="assets/pr12.png" alt="Product" />
+                <img src="assets/pr12.png" alt="Product" class="w-full" />
                 <div class="p-2">
                     <div class="flex justify-between items-center w-[94%]">
                         <p class="text-[#4B2C7A] font-bold">Lorem Ipsium</p>
@@ -297,7 +299,7 @@
                 </div>
             </div>
             <div class="bg-white rounded-[15px] shadow relative">
-                <div class="absolute flex items-center gap-2 right-3 top-28">
+                <div class="absolute flex items-center gap-2 right-3 top-16 md:top-28">
                     <div class="bg-white p-1.5 rounded-[50%] cursor-pointer">
                         <img src="assets/sm-heart.png" alt="">
                     </div>
@@ -308,7 +310,7 @@
                         <img src="assets/sm-cart.png" alt="">
                     </div>
                 </div>
-                <img src="assets/pr22.png" alt="Product" />
+                <img src="assets/pr22.png" alt="Product" class="w-full" />
                 <div class="p-2">
                     <div class="flex justify-between items-center w-[94%]">
                         <p class="text-[#4B2C7A] font-bold">Lorem Ipsium</p>
@@ -322,7 +324,7 @@
                 </div>
             </div>
             <div class="bg-white rounded-[15px] shadow relative">
-                <div class="absolute flex items-center gap-2 right-3 top-28">
+                <div class="absolute flex items-center gap-2 right-3 top-16 md:top-28">
                     <div class="bg-white p-1.5 rounded-[50%] cursor-pointer">
                         <img src="assets/sm-heart.png" alt="">
                     </div>
@@ -333,7 +335,7 @@
                         <img src="assets/sm-cart.png" alt="">
                     </div>
                 </div>
-                <img src="assets/pr32.png" alt="Product" />
+                <img src="assets/pr32.png" alt="Product" class="w-full" />
                 <div class="p-2">
                     <div class="flex justify-between items-center w-[94%]">
                         <p class="text-[#4B2C7A] font-bold">Lorem Ipsium</p>
@@ -347,7 +349,7 @@
                 </div>
             </div>
             <div class="bg-white rounded-[15px] shadow relative">
-                <div class="absolute flex items-center gap-2 right-3 top-28">
+                <div class="absolute flex items-center gap-2 right-3 top-16 md:top-28">
                     <div class="bg-white p-1.5 rounded-[50%] cursor-pointer">
                         <img src="assets/sm-heart.png" alt="">
                     </div>
@@ -358,7 +360,7 @@
                         <img src="assets/sm-cart.png" alt="">
                     </div>
                 </div>
-                <img src="assets/pr42.png" alt="Product" />
+                <img src="assets/pr42.png" alt="Product" class="w-full" />
                 <div class="p-2">
                     <div class="flex justify-between items-center w-[94%]">
                         <p class="text-[#4B2C7A] font-bold">Lorem Ipsium</p>
@@ -375,8 +377,9 @@
         </div>
     </section>
 
-    <section class="py-10 bg-gray-50 playfair px-[10%] flex justify-between items-center">
-        <div class="w-[40%]">
+    <section
+        class="py-10 bg-gray-50 playfair px-[4%] md:px-[10%] flex flex-col md:flex-row justify-between items-center">
+        <div class="w-[100%] md:w-[40%]">
             <h2 class="text-3xl text-[#4B2C7A] font-bold mb-6">Learn About Us And What Sets Us Apart From Others</h2>
             <p class="mb-6 text-[14px]">At Gyalu, we create more than just luxury jewelry, we craft timeless pieces that
                 celebrate individuality, elegance, and the stories that shape us. Founded on a passion for exquisite
@@ -385,27 +388,28 @@
             <button class=" text-[#4B2C7A] px-6 py-2 text-[14px] border rounded-[4px]"
                 style="border: 1px solid #4B2C7A;">Read More</button>
         </div>
-        <div class="flex w-[40%]">
+        <div class="flex w-[100%] md:w-auto mt-5 md:mt-0">
             <img src="assets/learn2.png" alt="">
         </div>
     </section>
 
     <!-- Latest Trends -->
-    <section class="py-10 px-[10%] ">
-        <div class="flex justify-between items-center">
+    <section class="py-10 px-[4%] md:px-[10%] ">
+        <div class="flex justify-between flex-col md:flex-row md:items-center items-baseline">
             <div>
                 <h2 class="text-2xl text-[#3D3D3D] font-bold mb-2">Latest Trends</h2>
-                <p class=" text-[#666666] text-[14px] max-w-[60%]">Lorem ipsum dolor sit amet, consectetur adipiscing
+                <p class=" text-[#666666] text-[14px] md:max-w-[60%]">Lorem ipsum dolor sit amet, consectetur adipiscing
                     elit.
                     Nulla fringilla nunc in molestie feugiat. Nunc auctor consectetur elit, quis pulvina.</p>
             </div>
-            <button class="bg-[#4B2C7A] text-white px-7 py-2 text-[14px] font-semibold rounded-[6px]">Read All
+            <button class="bg-[#4B2C7A] mt-4 md:mt-0 text-white px-7 py-2 text-[14px] font-semibold rounded-[6px]">Read
+                All
                 Blogs</button>
         </div>
-        <div class="text-[15px] flex gap-5 mt-10">
-            <div class="w-[37%] bg-[#E5E5E5] rounded-[12px]">
+        <div class="text-[15px] flex flex-col md:flex-row gap-5 mt-10">
+            <div class="w-[100%] md:w-[37%] bg-[#E5E5E5] shadow-md rounded-[12px]">
                 <img src="assets/trend1.png" alt="" class="w-full">
-                <div class="mt-5 pl-2">
+                <div class="mt-5 p-2">
                     <p class="text-[#D4AF37] font-semibold mb-3">Lorem Ipsium</p>
                     <p class="text-[#333333] text-[14px]">Lorem Ipsum is simply dummy text of the printing and
                         typesetting industry.
@@ -413,11 +417,11 @@
                     <p class="text-[#D4AF37] font-semibold mt-3">Lorem Ipsium</p>
                 </div>
             </div>
-            <div class="w-[70%]">
+            <div class="w-[100%] md:w-[70%]">
                 <div class="flex justify-between gap-5">
-                    <div class="flex gap-3 items-center bg-[#E5E5E5] rounded-[12px]">
-                        <img src="assets/trend2.png" alt="">
-                        <div>
+                    <div class="flex flex-col md:flex-row gap-3 items-center bg-[#E5E5E5] shadow-md rounded-[12px]">
+                        <img src="assets/trend2.png" alt="" class="w-full">
+                        <div class="p-2">
                             <p class="text-[#D4AF37] font-semibold mb-3">Lorem Ipsium</p>
                             <p class="text-[#333333] text-[14px]">Lorem Ipsum is simply dummy text of the printing and
                                 typesetting
@@ -425,9 +429,9 @@
                             <p class="text-[#D4AF37] font-semibold mt-3">Lorem Ipsium</p>
                         </div>
                     </div>
-                    <div class="flex gap-3 items-center bg-[#E5E5E5] rounded-[12px]">
-                        <img src="assets/trend3.png" alt="">
-                        <div>
+                    <div class="flex flex-col md:flex-row gap-3 items-center bg-[#E5E5E5] shadow-md rounded-[12px]">
+                        <img src="assets/trend3.png" alt="" class="w-full">
+                        <div class="p-2">
                             <p class="text-[#D4AF37] font-semibold mb-3">Lorem Ipsium</p>
                             <p class="text-[#333333] text-[14px]">Lorem Ipsum is simply dummy text of the printing and
                                 typesetting
@@ -436,9 +440,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex gap-3 items-center mt-5 bg-[#E5E5E5] rounded-[12px]">
-                    <img src="assets/trend4.png" alt="">
-                    <div>
+                <div class="flex flex-col md:flex-row gap-3 items-center mt-5 bg-[#E5E5E5] shadow-md rounded-[12px]">
+                    <img src="assets/trend4.png" alt="" class="w-full">
+                    <div class="p-2">
                         <p class="text-[#D4AF37] font-semibold mb-3">Lorem Ipsium</p>
                         <p class="text-[#333333] text-[14px]">Lorem Ipsum is simply dummy text of the printing and
                             typesetting
@@ -451,15 +455,15 @@
     </section>
 
     <!-- Newsletter & Footer -->
-    <footer class="bg-[#f5f5dc] py-10 px-[10%] text-sm playfair">
+    <footer class="bg-[rgb(212,175,55,0.1)] py-10 px-[4%] md:px-[10%] text-sm playfair">
         <div class="max-w-7xl mx-auto">
-            <div class="flex justify-between">
-                <div class="mb-6 w-[35%] relative">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-6 w-[100%] md:w-[35%] relative">
                     <p class="font-bold">Subscribe to our Newsletter</p>
                     <input type="email" placeholder="Email" class="mt-4 p-2.5 border rounded w-full" />
                     <img src="assets/emailArr.png" alt="" class="w-[29px] h-[29px] absolute right-4 top-[42.5px]">
                 </div>
-                <div class="grid grid-cols-2 gap-3 text-[13px] w-[35%]">
+                <div class="grid grid-cols-2 gap-3 text-[13px] w-[100%] md:w-[35%]">
                     <div class="flex items-center gap-2 cursor-pointer">
                         <img src="assets/phone.png" alt="">
                         <p>+234 9067431112</p>
@@ -481,12 +485,12 @@
                 </div>
             </div>
             <div class="mt-14 bg-[#000000] opacity-50 w-full h-[2px]"></div>
-            <div class="flex justify-between mt-10 text-[14px]">
-                <div class="-mt-5 w-[35%]">
-                    <img src="assets/logo.png" alt="" class="-ml-12">
+            <div class="flex flex-col md:flex-row justify-between mt-10 text-[14px]">
+                <div class="-mt-5 w-[100%] md:w-[35%] flex flex-col justify-center md:justify-start items-center md:items-start">
+                    <img src="assets/logo.png" alt="" class="md:-ml-12 w-[70%] md:w-auto">
                     <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
                         printer took a galley of type and scrambled </p>
-                    <div class="flex items-center gap-3 mt-5">
+                    <div class="flex items-center gap-5 md:gap-3 mt-5">
                         <img src="assets/facebook.png" alt="" class="w-[12px] h-auto cursor-pointer">
                         <img src="assets/x.png" alt="" class="w-[18px] h-auto cursor-pointer">
                         <img src="assets/Instagram.png" alt="" class="w-[18px] h-auto cursor-pointer">
@@ -494,28 +498,30 @@
                         <img src="assets/pinterest.png" alt="" class="w-[23px] h-auto cursor-pointer">
                     </div>
                 </div>
-                <div>
-                    <p class="font-medium mb-2 text-[17px]">Products</p>
-                    <p>Lorem</p>
-                    <p>Lorem</p>
-                    <p>Lorem</p>
-                    <p>Lorem</p>
-                    <p>Lorem</p>
-                    <p>Lorem</p>
-                </div>
-                <div>
-                    <p class="font-medium mb-2 text-[17px]">Information</p>
-                    <p>Book An Appointment</p>
-                    <p>Book An Appointment</p>
-                    <p>Book An Appointment</p>
-                    <p>Book An Appointment</p>
-                    <p>Book An Appointment</p>
-                    <p>Book An Appointment</p>
-                </div>
-                <div>
-                    <p class="font-medium mb-2 text-[17px]">Our Company</p>
-                    <p>Our Mission</p>
-                    <p>Our Vission</p>
+                <div class="flex justify-between mt-10 md:mt-0 md:w-[58%]">
+                    <div>
+                        <p class="font-medium mb-2 text-[18px]">Products</p>
+                        <p>Lorem</p>
+                        <p>Lorem</p>
+                        <p>Lorem</p>
+                        <p>Lorem</p>
+                        <p>Lorem</p>
+                        <p>Lorem</p>
+                    </div>
+                    <div>
+                        <p class="font-medium mb-2 text-[18px]">Information</p>
+                        <p>Book An Appointment</p>
+                        <p>Book An Appointment</p>
+                        <p>Book An Appointment</p>
+                        <p>Book An Appointment</p>
+                        <p>Book An Appointment</p>
+                        <p>Book An Appointment</p>
+                    </div>
+                    <div>
+                        <p class="font-medium mb-2 text-[18px]">Our Company</p>
+                        <p>Our Mission</p>
+                        <p>Our Vission</p>
+                    </div>
                 </div>
             </div>
             <div class="mt-14 bg-[#000000] opacity-50 w-full h-[2px]"></div>
