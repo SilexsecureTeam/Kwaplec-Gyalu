@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Londrina+Sketch&family=Monoton&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <style>
+        .monoton {
+            font-family: 'Monoton', cursive;
+        }
+
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-gray-700">
+
+    <div data-include="header.html"></div>
+    <!-- About Hero Section -->
+    <section class="w-full bg-white px-[10%] md:px-[10%] py-20 playfair">
+        <!-- Section Header -->
+        <div class="bg-[#D6AF4B] text-white px-5 py-3 rounded-t-md text-[15px] font-semibold">
+          Get In Touch With Us
+        </div>
+      
+        <!-- Contact Content -->
+        <div class="border border-gray-200 rounded-b-md grid grid-cols-1 md:grid-cols-3 gap-6 p-6 py-10">
+          <!-- Contact Info -->
+          <div class="space-y-6 text-sm">
+            <div>
+              <h3 class="font-semibold mb-1">Phone Number</h3>
+              <p>081012345678</p>
+            </div>
+            <div class="w-[80%] h-[1px] bg-[#666666] opacity-50"></div>
+            <div>
+              <h3 class="font-semibold mb-1">Email Address</h3>
+              <p>myemail@example.com</p>
+            </div>
+            <div class="w-[80%] h-[1px] bg-[#666666] opacity-50"></div>
+            <div>
+              <h3 class="font-semibold mb-1">Location</h3>
+              <p>Lorem Ipsum</p>
+            </div>
+            <div class="w-[80%] h-[1px] bg-[#666666] opacity-50"></div>
+          </div>
+      
+          <!-- Contact Form -->
+          <div class="md:col-span-2 space-y-4">
+            <h3 class="font-semibold text-sm">Send us a message</h3>
+            <p class="text-sm text-gray-600">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla fringilla nunc in molestie feugiat.
+            </p>
+      
+            <form class="space-y-4">
+              <!-- 2 Column Grid -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input type="text" placeholder="Your Name" class="w-full border rounded-[25px] p-2 text-sm outline-none" />
+                <input type="email" placeholder="Your Email" class="w-full border rounded-[25px] p-2 text-sm outline-none" />
+                <input type="text" placeholder="Phone Number" class="w-full border rounded-[25px] p-2 text-sm outline-none" />
+                <input type="text" placeholder="Subject" class="w-full border rounded-[25px] p-2 text-sm outline-none" />
+              </div>
+      
+              <!-- Message Box -->
+              <textarea placeholder="Message" rows="4" class="w-full border rounded-[25px] p-2 text-sm outline-none"></textarea>
+      
+              <!-- Submit Button -->
+              <button type="submit" class="bg-[#D6AF4B] text-white px-6 py-2 rounded-[25px] text-sm outline-none">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+      
+
+    <!-- FAQ Section -->
+    <!-- <div data-include="faq.html"></div> -->
+
+    <div data-include="footer.html"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
