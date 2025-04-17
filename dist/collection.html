@@ -25,7 +25,7 @@
 <body class="">
     <div data-include="header.html"></div>
 
-    <div class="container mx-auto px-4 py-8 grid grid-cols-12 gap-6">
+    <div class="container mx-auto px-[8.5%] py-8 grid grid-cols-12 gap-6 playfair text-[#333333]">
         <!-- Sidebar -->
         <aside class="col-span-3">
             <div class="mb-6">
@@ -67,80 +67,213 @@
         </aside>
 
         <!-- Main Content -->
-        <main class="col-span-9">
+        <main class="col-span-9 px-5">
             <div class="mb-6">
-                <h1 class="text-xl font-semibold">Our Collection Of Products</h1>
-                <p class="text-sm text-gray-500">Showing 1–09 of 24 results</p>
+                <h1 class="text-2xl font-semibold mb-5">Our Collection Of Products</h1>
+                <p class="text-sm text-[#333333]">Showing 1–09 of 24 results</p>
+                <p class="text-sm opacity-70">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
 
             <!-- Products Grid -->
-            <div class="grid grid-cols-3 gap-4">
-                <!-- Single Product Card -->
-                <div class="border p-2 rounded-md">
-                    <img src="placeholder.jpg" alt="product" class="w-full h-48 object-cover rounded-md">
-                    <div class="mt-2 text-sm">
-                        <h3 class="font-medium">Lorem Ipsum</h3>
-                        <p class="text-xs text-gray-500">Lorem ipsum dolor sit amet consectetur</p>
-                        <p class="font-semibold mt-1">$200.00</p>
+            <div class="grid grid-cols-3 gap-10">
+                <div class="bg-white rounded-[15px] shadow relative">
+                    <div class="absolute flex items-center gap-2 right-3 top-16 md:top-28">
+                        <div class="bg-white p-1.5 rounded-[50%] cursor-pointer">
+                            <img src="assets/sm-heart.png" alt="">
+                        </div>
+                        <div class="bg-white p-1.5 rounded-[50%] cursor-pointer">
+                            <img src="assets/eye.png" alt="">
+                        </div>
+                        <div class="bg-white p-1.5 rounded-[50%] cursor-pointer">
+                            <img src="assets/sm-cart.png" alt="">
+                        </div>
+                    </div>
+                    <img src="assets/pr1.png" alt="Product" class="w-full" />
+                    <div class="p-2">
+                        <div class="flex justify-between items-center w-[94%]">
+                            <p class="text-[#4B2C7A] font-bold">Lorem Ipsium</p>
+                            <div class="flex items-center gap-1 w-[30px] h-[30px]">
+                                <img src="assets/star.png" alt="" class="w-[20px] h-[20px]">
+                                <p>4.9</p>
+                            </div>
+                        </div>
+                        <p class="text-[14px] font-normal text-[#333333] mt-3">Lorem ipsum dolor sit amet consectetur</p>
+                        <p class="text-[#4B2C7A] font-bold mt-3">#20,000</p>
                     </div>
                 </div>
-
-                <!-- Repeat product card 8 more times (or use a loop in a real framework) -->
-                <!-- Placeholder duplicated for brevity -->
-                <div class="border p-2 rounded-md"><img src="placeholder.jpg" alt=""
-                        class="w-full h-48 object-cover rounded-md">
-                    <div class="mt-2 text-sm">
-                        <h3 class="font-medium">Lorem Ipsum</h3>
-                        <p class="text-xs text-gray-500">Lorem ipsum dolor sit amet consectetur</p>
-                        <p class="font-semibold mt-1">$200.00</p>
+                <div class="bg-white rounded-[15px] shadow relative">
+                    <div class="absolute flex items-center gap-2 right-3 top-16 md:top-28">
+                        <div class="bg-white p-1.5 rounded-[50%] cursor-pointer">
+                            <img src="assets/sm-heart.png" alt="">
+                        </div>
+                        <div class="bg-white p-1.5 rounded-[50%] cursor-pointer">
+                            <img src="assets/eye.png" alt="">
+                        </div>
+                        <div class="bg-white p-1.5 rounded-[50%] cursor-pointer">
+                            <img src="assets/sm-cart.png" alt="">
+                        </div>
+                    </div>
+                    <img src="assets/pr2.png" alt="Product" class="w-full" />
+                    <div class="p-2">
+                        <div class="flex justify-between items-center w-[94%]">
+                            <p class="text-[#4B2C7A] font-bold">Lorem Ipsium</p>
+                            <div class="flex items-center gap-1 w-[30px] h-[30px]">
+                                <img src="assets/star.png" alt="" class="w-[20px] h-[20px]">
+                                <p>4.9</p>
+                            </div>
+                        </div>
+                        <p class="text-[14px] font-normal text-[#333333] mt-3">Lorem ipsum dolor sit amet consectetur</p>
+                        <p class="text-[#4B2C7A] font-bold mt-3">#20,000</p>
                     </div>
                 </div>
-                <div class="border p-2 rounded-md"><img src="placeholder.jpg" alt=""
-                        class="w-full h-48 object-cover rounded-md">
-                    <div class="mt-2 text-sm">
-                        <h3 class="font-medium">Lorem Ipsum</h3>
-                        <p class="text-xs text-gray-500">Lorem ipsum dolor sit amet consectetur</p>
-                        <p class="font-semibold mt-1">$200.00</p>
+                <div class="bg-white rounded-[15px] shadow relative">
+                    <div class="absolute flex items-center gap-2 right-3 top-16 md:top-28">
+                        <div class="bg-white p-1.5 rounded-[50%] cursor-pointer">
+                            <img src="assets/sm-heart.png" alt="">
+                        </div>
+                        <div class="bg-white p-1.5 rounded-[50%] cursor-pointer">
+                            <img src="assets/eye.png" alt="">
+                        </div>
+                        <div class="bg-white p-1.5 rounded-[50%] cursor-pointer">
+                            <img src="assets/sm-cart.png" alt="">
+                        </div>
+                    </div>
+                    <img src="assets/pr3.png" alt="Product" class="w-full" />
+                    <div class="p-2">
+                        <div class="flex justify-between items-center w-[94%]">
+                            <p class="text-[#4B2C7A] font-bold">Lorem Ipsium</p>
+                            <div class="flex items-center gap-1 w-[30px] h-[30px]">
+                                <img src="assets/star.png" alt="" class="w-[20px] h-[20px]">
+                                <p>4.9</p>
+                            </div>
+                        </div>
+                        <p class="text-[14px] font-normal text-[#333333] mt-3">Lorem ipsum dolor sit amet consectetur</p>
+                        <p class="text-[#4B2C7A] font-bold mt-3">#20,000</p>
                     </div>
                 </div>
-                <div class="border p-2 rounded-md"><img src="placeholder.jpg" alt=""
-                        class="w-full h-48 object-cover rounded-md">
-                    <div class="mt-2 text-sm">
-                        <h3 class="font-medium">Lorem Ipsum</h3>
-                        <p class="text-xs text-gray-500">Lorem ipsum dolor sit amet consectetur</p>
-                        <p class="font-semibold mt-1">$200.00</p>
+                <div class="bg-white rounded-[15px] shadow relative">
+                    <div class="absolute flex items-center gap-2 right-3 top-16 md:top-28">
+                        <div class="bg-white p-1.5 rounded-[50%] cursor-pointer">
+                            <img src="assets/sm-heart.png" alt="">
+                        </div>
+                        <div class="bg-white p-1.5 rounded-[50%] cursor-pointer">
+                            <img src="assets/eye.png" alt="">
+                        </div>
+                        <div class="bg-white p-1.5 rounded-[50%] cursor-pointer">
+                            <img src="assets/sm-cart.png" alt="">
+                        </div>
+                    </div>
+                    <img src="assets/pr4.png" alt="Product" class="w-full" />
+                    <div class="p-2">
+                        <div class="flex justify-between items-center w-[94%]">
+                            <p class="text-[#4B2C7A] font-bold">Lorem Ipsium</p>
+                            <div class="flex items-center gap-1 w-[30px] h-[30px]">
+                                <img src="assets/star.png" alt="" class="w-[20px] h-[20px]">
+                                <p>4.9</p>
+                            </div>
+                        </div>
+                        <p class="text-[14px] font-normal text-[#333333] mt-3">Lorem ipsum dolor sit amet consectetur</p>
+                        <p class="text-[#4B2C7A] font-bold mt-3">#20,000</p>
                     </div>
                 </div>
-                <div class="border p-2 rounded-md"><img src="placeholder.jpg" alt=""
-                        class="w-full h-48 object-cover rounded-md">
-                    <div class="mt-2 text-sm">
-                        <h3 class="font-medium">Lorem Ipsum</h3>
-                        <p class="text-xs text-gray-500">Lorem ipsum dolor sit amet consectetur</p>
-                        <p class="font-semibold mt-1">$200.00</p>
+                <div class="bg-white rounded-[15px] shadow relative">
+                    <div class="absolute flex items-center gap-2 right-3 top-16 md:top-28">
+                        <div class="bg-white p-1.5 rounded-[50%] cursor-pointer">
+                            <img src="assets/sm-heart.png" alt="">
+                        </div>
+                        <div class="bg-white p-1.5 rounded-[50%] cursor-pointer">
+                            <img src="assets/eye.png" alt="">
+                        </div>
+                        <div class="bg-white p-1.5 rounded-[50%] cursor-pointer">
+                            <img src="assets/sm-cart.png" alt="">
+                        </div>
+                    </div>
+                    <img src="assets/pr1.png" alt="Product" class="w-full" />
+                    <div class="p-2">
+                        <div class="flex justify-between items-center w-[94%]">
+                            <p class="text-[#4B2C7A] font-bold">Lorem Ipsium</p>
+                            <div class="flex items-center gap-1 w-[30px] h-[30px]">
+                                <img src="assets/star.png" alt="" class="w-[20px] h-[20px]">
+                                <p>4.9</p>
+                            </div>
+                        </div>
+                        <p class="text-[14px] font-normal text-[#333333] mt-3">Lorem ipsum dolor sit amet consectetur</p>
+                        <p class="text-[#4B2C7A] font-bold mt-3">#20,000</p>
                     </div>
                 </div>
-                <div class="border p-2 rounded-md"><img src="placeholder.jpg" alt=""
-                        class="w-full h-48 object-cover rounded-md">
-                    <div class="mt-2 text-sm">
-                        <h3 class="font-medium">Lorem Ipsum</h3>
-                        <p class="text-xs text-gray-500">Lorem ipsum dolor sit amet consectetur</p>
-                        <p class="font-semibold mt-1">$200.00</p>
+                <div class="bg-white rounded-[15px] shadow relative">
+                    <div class="absolute flex items-center gap-2 right-3 top-16 md:top-28">
+                        <div class="bg-white p-1.5 rounded-[50%] cursor-pointer">
+                            <img src="assets/sm-heart.png" alt="">
+                        </div>
+                        <div class="bg-white p-1.5 rounded-[50%] cursor-pointer">
+                            <img src="assets/eye.png" alt="">
+                        </div>
+                        <div class="bg-white p-1.5 rounded-[50%] cursor-pointer">
+                            <img src="assets/sm-cart.png" alt="">
+                        </div>
+                    </div>
+                    <img src="assets/pr3.png" alt="Product" class="w-full" />
+                    <div class="p-2">
+                        <div class="flex justify-between items-center w-[94%]">
+                            <p class="text-[#4B2C7A] font-bold">Lorem Ipsium</p>
+                            <div class="flex items-center gap-1 w-[30px] h-[30px]">
+                                <img src="assets/star.png" alt="" class="w-[20px] h-[20px]">
+                                <p>4.9</p>
+                            </div>
+                        </div>
+                        <p class="text-[14px] font-normal text-[#333333] mt-3">Lorem ipsum dolor sit amet consectetur</p>
+                        <p class="text-[#4B2C7A] font-bold mt-3">#20,000</p>
                     </div>
                 </div>
-                <div class="border p-2 rounded-md"><img src="placeholder.jpg" alt=""
-                        class="w-full h-48 object-cover rounded-md">
-                    <div class="mt-2 text-sm">
-                        <h3 class="font-medium">Lorem Ipsum</h3>
-                        <p class="text-xs text-gray-500">Lorem ipsum dolor sit amet consectetur</p>
-                        <p class="font-semibold mt-1">$200.00</p>
+                <div class="bg-white rounded-[15px] shadow relative">
+                    <div class="absolute flex items-center gap-2 right-3 top-16 md:top-28">
+                        <div class="bg-white p-1.5 rounded-[50%] cursor-pointer">
+                            <img src="assets/sm-heart.png" alt="">
+                        </div>
+                        <div class="bg-white p-1.5 rounded-[50%] cursor-pointer">
+                            <img src="assets/eye.png" alt="">
+                        </div>
+                        <div class="bg-white p-1.5 rounded-[50%] cursor-pointer">
+                            <img src="assets/sm-cart.png" alt="">
+                        </div>
+                    </div>
+                    <img src="assets/pr2.png" alt="Product" class="w-full" />
+                    <div class="p-2">
+                        <div class="flex justify-between items-center w-[94%]">
+                            <p class="text-[#4B2C7A] font-bold">Lorem Ipsium</p>
+                            <div class="flex items-center gap-1 w-[30px] h-[30px]">
+                                <img src="assets/star.png" alt="" class="w-[20px] h-[20px]">
+                                <p>4.9</p>
+                            </div>
+                        </div>
+                        <p class="text-[14px] font-normal text-[#333333] mt-3">Lorem ipsum dolor sit amet consectetur</p>
+                        <p class="text-[#4B2C7A] font-bold mt-3">#20,000</p>
                     </div>
                 </div>
-                <div class="border p-2 rounded-md"><img src="placeholder.jpg" alt=""
-                        class="w-full h-48 object-cover rounded-md">
-                    <div class="mt-2 text-sm">
-                        <h3 class="font-medium">Lorem Ipsum</h3>
-                        <p class="text-xs text-gray-500">Lorem ipsum dolor sit amet consectetur</p>
-                        <p class="font-semibold mt-1">$200.00</p>
+                <div class="bg-white rounded-[15px] shadow relative">
+                    <div class="absolute flex items-center gap-2 right-3 top-16 md:top-28">
+                        <div class="bg-white p-1.5 rounded-[50%] cursor-pointer">
+                            <img src="assets/sm-heart.png" alt="">
+                        </div>
+                        <div class="bg-white p-1.5 rounded-[50%] cursor-pointer">
+                            <img src="assets/eye.png" alt="">
+                        </div>
+                        <div class="bg-white p-1.5 rounded-[50%] cursor-pointer">
+                            <img src="assets/sm-cart.png" alt="">
+                        </div>
+                    </div>
+                    <img src="assets/pr4.png" alt="Product" class="w-full" />
+                    <div class="p-2">
+                        <div class="flex justify-between items-center w-[94%]">
+                            <p class="text-[#4B2C7A] font-bold">Lorem Ipsium</p>
+                            <div class="flex items-center gap-1 w-[30px] h-[30px]">
+                                <img src="assets/star.png" alt="" class="w-[20px] h-[20px]">
+                                <p>4.9</p>
+                            </div>
+                        </div>
+                        <p class="text-[14px] font-normal text-[#333333] mt-3">Lorem ipsum dolor sit amet consectetur</p>
+                        <p class="text-[#4B2C7A] font-bold mt-3">#20,000</p>
                     </div>
                 </div>
             </div>
