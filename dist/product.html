@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Detail</title>
+    <script src="https://unpkg.com/alpinejs" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Londrina+Sketch&family=Monoton&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <style>
+        .monoton {
+            font-family: 'Monoton', cursive;
+        }
+
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+
+<body x-data="productPage()">
+
+    <div data-include="header.html"></div>
+
+    <section class="px-[10%] py-10">
+        <!-- Breadcrumb -->
+        <nav class="text-[15px] text-gray-500 mb-10 flex space-x-3 items-center">
+            <a href="#" class="hover:underline">Home</a> >
+            <a href="#" class="hover:underline">Catalog</a> >
+            <a href="#" class="hover:underline">Necklace</a> >
+            <a href="#" class="hover:underline">Bracelets</a> >
+            <a href="#" class="hover:underline">Bracelets</a> >
+            <span class="text-black font-medium">Earrings</span>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+            <!-- Image Gallery -->
+            <div class="flex gap-[3%] space-x-4">
+                <!-- Thumbnails -->
+                <div class="flex flex-col space-y-3 w-[17.5%]">
+                    <template x-for="(img, index) in images" :key="index">
+                        <img :src="img" @click="activeImage = img"
+                            class="w-full object-cover border cursor-pointer rounded-md"
+                            :class="{ 'ring-2 ring-purple-600': activeImage === img }" />
+                    </template>
+                </div>
+                <!-- Main Image -->
+                <div class="flex-1 w-[45%]">
+                    <img :src="activeImage" class="rounded-xl object-cover w-full">
+                </div>
+            </div>
+
+            <!-- Product Info -->
+            <div>
+                <h2 class="text-2xl font-semibold mb-2">Double Bed & Side Tables</h2>
+                <div class="flex items-center space-x-2 mb-3 border-b pb-4">
+                    <span class="text-xl font-medium">$54.98</span>
+                    <div class="text-yellow-400">
+                        <span>★★★★★</span>
+                    </div>
+                    <span class="text-gray-500 text-sm">(32 reviews)</span>
+                </div>
+
+                <!-- Tabs -->
+                <div class="mt-3">
+                    <nav class="flex gap-4">
+                        <template x-for="tab in tabs" :key="tab">
+                            <button @click="activeTab = tab"
+                                :class="activeTab === tab ? 'border px-3 py-2 -mt-1.5 rounded-md border-purple-600 text-purple-600' : 'text-gray-500'"
+                                class="pb-2 uppercase text-sm font-semibold focus:outline-none">
+                                <span x-text="tab"></span>
+                            </button>
+                        </template>
+                    </nav>
+                </div>
+
+                <!-- Tab Content -->
+                <div class="mt-4 text-sm text-gray-700">
+                    <template x-if="activeTab === 'DESCRIPTION'">
+                        <div>
+                            <p class="mb-4">Lorem ipsum dolor sit amet, consectetuer adipi scing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magn. Lorem ipsum dolor sit amet, consectetuer adipi scing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magn. </p>
+                            <ul class="list-disc ml-5 space-y-1">
+                                <li>Lorem ipsum dolor sit amet</li>
+                                <li>consectetur adipi scing elit</li>
+                                <li>Lorem ipsum dolor sit amet, consectetur</li>
+                            </ul>
+                        </div>
+                    </template>
+
+                    <template x-if="activeTab === 'SPECIFICATION'">
+                        <div>
+                            <p>Specifications details here...</p>
+                        </div>
+                    </template>
+
+                    <template x-if="activeTab === 'DELIVERY'">
+                        <div>
+                            <p>Delivery info here...</p>
+                        </div>
+                    </template>
+                </div>
+
+                <!-- Meta Info -->
+                <div class="grid grid-cols-2 gap-2 mt-5 text-sm space-y-1">
+                    <p>Product ID: XX</p>
+                    <p>Category: Necklace</p>
+                    <div class="flex items-center gap-3">
+                        <span class="font-normal text-sm">Select color:</span>
+                        <div class="flex space-x-1">
+                            <template x-for="(color, index) in colors" :key="index">
+                                <div class="w-6 h-6 rounded-full cursor-pointer border-2"
+                                    :style="`background-color: ${color}`"
+                                    :class="selectedColor === color ? 'ring-2 ring-purple-600 border-white' : 'border-gray-300'"
+                                    @click="selectedColor = color"></div>
+                            </template>
+                        </div>
+                    </div>
+                    <p>Available: In Stock</p>
+                </div>
+
+                <!-- Color Select -->
+               
+
+                <!-- Action Buttons -->
+                <div class="mt-6 flex space-x-4">
+                    <button class="border px-4 py-2 rounded hover:bg-gray-100">Add to Wishlist</button>
+                    <button class="bg-purple-600 text-white px-6 py-2 rounded hover:bg-purple-700">Add to Cart</button>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <div data-include="footer.html"></div>
+
+    <!-- Alpine Data -->
+    <script>
+        function productPage() {
+            return {
+                images: [
+                    'assets/earing1.png', 'assets/earing2.png', 'assets/earing3.png', 'assets/earing4.png',
+                ],
+                activeImage: 'assets/earing1.png',
+                tabs: ['DESCRIPTION', 'SPECIFICATION', 'DELIVERY'],
+                activeTab: 'DESCRIPTION',
+                colors: ['#FFD700', '#000000'],
+                selectedColor: '#FFD700',
+            }
+        }
+    </script>
+</body>
+
+</html>
