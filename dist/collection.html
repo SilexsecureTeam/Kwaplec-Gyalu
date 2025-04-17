@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Collection</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/alpinejs" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -28,28 +29,59 @@
     <div class="container mx-auto px-[8.5%] py-8 grid grid-cols-12 gap-6 playfair text-[#333333]">
         <!-- Sidebar -->
         <aside class="col-span-3">
-            <div class="mb-6">
-                <h2 class="font-semibold mb-2">Price</h2>
-                <div class="flex justify-between text-sm mt-2">
-                    <span class="leading-[1.8]">From <br>$200</span>
-                    <span class="leading-[1.8]">To <br>$1320</span>
+            <div class="mb-6" x-data="{
+       min: 5000, 
+       max: 50000,
+       minRange: 0, 
+       maxRange: 100000,
+       active: null 
+     }">
+                <h2 class="font-semibold mb-2 text-[18px] text-[#4B2C7A]">Price</h2>
+                <div class="w-full h-[1px] bg-black opacity-30"></div>
+
+                <!-- Number Inputs -->
+                <div class="flex justify-between text-sm mt-2 space-x-4">
+                    <div>
+                        <label>
+                            From<br>
+                            <input type="number" :min="minRange" :max="max" x-model.number="min"
+                                class="border rounded-[4px] text-center py-2 w-[80px] mt-1" />
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            To<br>
+                            <input type="number" :min="min" :max="maxRange" x-model.number="max"
+                                class="border rounded-[4px] text-center py-2 w-[80px] mt-1" />
+                        </label>
+                    </div>
                 </div>
-                <input type="range" min="0" max="500" class="w-full">
-                
+
+                <!-- Range Sliders -->
+                <div class="relative mt-4 h-4">
+                    <!-- Background Track -->
+                    <div class="absolute inset-0 bg-gray-300 rounded"></div>
+
+                    <!-- Highlighted Range (between thumbs) -->
+                    <div class="absolute h-full bg-indigo-400 rounded"
+                        :style="`left:${((min - minRange)/(maxRange - minRange))*100}%; right:${(100 - ((max - minRange)/(maxRange - minRange))*100)}%`">
+                    </div>
+
+                    <!-- Min Thumb -->
+                    <input type="range" :min="minRange" :max="maxRange" step="10" x-model.number="min"
+                        @input="if (min > max) min = max" @mousedown="active = 'min'" @mouseup="active = null"
+                        :class="active === 'min' ? 'z-20' : 'z-10'"
+                        class="absolute w-full h-4 appearance-none pointer-events-auto bg-transparent" />
+
+                    <!-- Max Thumb -->
+                    <input type="range" :min="minRange" :max="maxRange" step="10" x-model.number="max"
+                        @input="if (max < min) max = min" @mousedown="active = 'max'" @mouseup="active = null"
+                        :class="active === 'max' ? 'z-20' : 'z-10'"
+                        class="absolute w-full h-4 appearance-none pointer-events-auto bg-transparent" />
+                </div>
             </div>
             <div class="mb-6">
                 <h2 class="font-semibold mb-2">Categories</h2>
-                <ul class="text-sm space-y-1">
-                    <li><input type="checkbox"> Lorem Ipsum (3)</li>
-                    <li><input type="checkbox"> Lorem Ipsum (4)</li>
-                    <li><input type="checkbox"> Lorem Ipsum (3)</li>
-                    <li><input type="checkbox"> Lorem Ipsum (3)</li>
-                    <li><input type="checkbox"> Lorem Ipsum (3)</li>
-                </ul>
-            </div>
-            <div class="mb-6">
-                <h2 class="font-semibold mb-2">Lorem Ipsum</h2>
-                <input type="text" placeholder="Search" class="border w-full px-2 py-1 text-sm">
                 <ul class="text-sm mt-2 space-y-1">
                     <li>Lorem Ipsum (1)</li>
                     <li>Lorem Ipsum (2)</li>
@@ -59,11 +91,96 @@
                     <li>Lorem Ipsum (5)</li>
                 </ul>
             </div>
-            <div class="text-sm space-y-2">
-                <div class="underline">Latest Updates</div>
-                <div class="underline">High-end Jewelry</div>
-                <div class="underline">Fashion Jewelry</div>
-                <div class="underline">Classic Jewelry</div>
+            <div class="mb-6">
+                <h2 class="font-semibold mb-2 text-[18px] text-[#4B2C7A]">Lorem Ipsum</h2>
+                <div class="w-full h-[1px] bg-black opacity-30"></div>
+                <input type="text" placeholder="Search" class="border w-full px-2 py-1 text-sm outline-none mt-4 rounded-md">
+                <ul class="text-sm space-y-1 mt-4">
+                    <li><input type="checkbox"> Lorem Ipsum (3)</li>
+                    <li><input type="checkbox"> Lorem Ipsum (4)</li>
+                    <li><input type="checkbox"> Lorem Ipsum (3)</li>
+                    <li><input type="checkbox"> Lorem Ipsum (3)</li>
+                    <li><input type="checkbox"> Lorem Ipsum (3)</li>
+                </ul>
+            </div>
+            <div class="text-sm space-y-2" x-data="{ open1: false, open2: false, open3: false, open4: false }">
+                <!-- Latest Updates -->
+                <div x-data="{ open1: false }">
+                    <button @click="open1 = !open1" class="flex items-center justify-between w-full mb-3 mt-4">
+                        <span class="text-[18px] text-[#4B2C7A]">Latest Updates</span>
+                        <svg :class="open1 ? 'rotate-90' : ''" class="w-4 h-4 transform transition-transform"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                    <div x-show="open1" class="mt-1 pl-4 text-gray-600">
+                        <p>Dropdown content 1</p>
+                    </div>
+                    <div x-show="open1" class="mt-1 pl-4 text-gray-600">
+                        <p>Dropdown content 1</p>
+                    </div>
+                    <div x-show="open1" class="mt-1 pl-4 text-gray-600">
+                        <p>Dropdown content 1</p>
+                    </div>
+                    <div x-show="open1" class="mt-1 pl-4 text-gray-600">
+                        <p>Dropdown content 1</p>
+                    </div>
+                    <div class="w-full h-[1px] bg-black opacity-30"></div>
+                </div>
+
+                <!-- High-end Jewelry -->
+                <div x-data="{ open2: false }">
+                    <button @click="open2 = !open2" class="flex items-center justify-between w-full mb-3 mt-4">
+                        <span class="text-[18px] text-[#4B2C7A]">High End Jewelry</span>
+                        <svg :class="open2 ? 'rotate-90' : ''" class="w-4 h-4 transform transition-transform"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                    <div x-show="open2" class="mt-1 pl-4 text-gray-600">
+                        <p>Dropdown content 2</p>
+                    </div>
+                    <div class="w-full h-[1px] bg-black opacity-30"></div>
+                </div>
+
+                <!-- Fashion Jewelry -->
+                <div x-data="{ open3: false }">
+                    <button @click="open3 = !open3" class="flex items-center justify-between w-full mb-3 mt-4">
+                        <span class="text-[18px] text-[#4B2C7A]">Fashion Jewelry</span>
+                        <svg :class="open3 ? 'rotate-90' : ''" class="w-4 h-4 transform transition-transform"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                    <div x-show="open3" class="mt-1 pl-4 text-gray-600">
+                        <p>Dropdown content 3</p>
+                    </div>
+                    <div x-show="open3" class="mt-1 pl-4 text-gray-600">
+                        <p>Dropdown content 3</p>
+                    </div>
+                    <div class="w-full h-[1px] bg-black opacity-30"></div>
+                </div>
+
+                <!-- Classic Jewelry -->
+                <div x-data="{ open4: false }">
+                    <button @click="open4 = !open4" class="flex items-center justify-between w-full mb-3 mt-4">
+                        <span class="text-[18px] text-[#4B2C7A]">Classic Jewelry</span>
+                        <svg :class="open4 ? 'rotate-90' : ''" class="w-4 h-4 transform transition-transform"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                    <div x-show="open4" class="mt-1 pl-4 text-gray-600">
+                        <p>Dropdown content 4</p>
+                    </div>
+                    <div x-show="open4" class="mt-1 pl-4 text-gray-600">
+                        <p>Dropdown content 4</p>
+                    </div>
+                    <div x-show="open4" class="mt-1 pl-4 text-gray-600">
+                        <p>Dropdown content 4</p>
+                    </div>
+                    <div class="w-full h-[1px] bg-black opacity-30"></div>
+                </div>
             </div>
         </aside>
 
@@ -72,7 +189,8 @@
             <div class="mb-6">
                 <h1 class="text-2xl font-semibold mb-5">Our Collection Of Products</h1>
                 <p class="text-sm text-[#333333]">Showing 1–09 of 24 results</p>
-                <p class="text-sm opacity-70">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p class="text-sm opacity-70">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
 
             <!-- Products Grid -->
@@ -98,7 +216,8 @@
                                 <p>4.9</p>
                             </div>
                         </div>
-                        <p class="text-[14px] font-normal text-[#333333] mt-3">Lorem ipsum dolor sit amet consectetur</p>
+                        <p class="text-[14px] font-normal text-[#333333] mt-3">Lorem ipsum dolor sit amet consectetur
+                        </p>
                         <p class="text-[#4B2C7A] font-bold mt-3">#20,000</p>
                     </div>
                 </div>
@@ -123,7 +242,8 @@
                                 <p>4.9</p>
                             </div>
                         </div>
-                        <p class="text-[14px] font-normal text-[#333333] mt-3">Lorem ipsum dolor sit amet consectetur</p>
+                        <p class="text-[14px] font-normal text-[#333333] mt-3">Lorem ipsum dolor sit amet consectetur
+                        </p>
                         <p class="text-[#4B2C7A] font-bold mt-3">#20,000</p>
                     </div>
                 </div>
@@ -148,7 +268,8 @@
                                 <p>4.9</p>
                             </div>
                         </div>
-                        <p class="text-[14px] font-normal text-[#333333] mt-3">Lorem ipsum dolor sit amet consectetur</p>
+                        <p class="text-[14px] font-normal text-[#333333] mt-3">Lorem ipsum dolor sit amet consectetur
+                        </p>
                         <p class="text-[#4B2C7A] font-bold mt-3">#20,000</p>
                     </div>
                 </div>
@@ -173,7 +294,8 @@
                                 <p>4.9</p>
                             </div>
                         </div>
-                        <p class="text-[14px] font-normal text-[#333333] mt-3">Lorem ipsum dolor sit amet consectetur</p>
+                        <p class="text-[14px] font-normal text-[#333333] mt-3">Lorem ipsum dolor sit amet consectetur
+                        </p>
                         <p class="text-[#4B2C7A] font-bold mt-3">#20,000</p>
                     </div>
                 </div>
@@ -198,7 +320,8 @@
                                 <p>4.9</p>
                             </div>
                         </div>
-                        <p class="text-[14px] font-normal text-[#333333] mt-3">Lorem ipsum dolor sit amet consectetur</p>
+                        <p class="text-[14px] font-normal text-[#333333] mt-3">Lorem ipsum dolor sit amet consectetur
+                        </p>
                         <p class="text-[#4B2C7A] font-bold mt-3">#20,000</p>
                     </div>
                 </div>
@@ -223,7 +346,8 @@
                                 <p>4.9</p>
                             </div>
                         </div>
-                        <p class="text-[14px] font-normal text-[#333333] mt-3">Lorem ipsum dolor sit amet consectetur</p>
+                        <p class="text-[14px] font-normal text-[#333333] mt-3">Lorem ipsum dolor sit amet consectetur
+                        </p>
                         <p class="text-[#4B2C7A] font-bold mt-3">#20,000</p>
                     </div>
                 </div>
@@ -248,7 +372,34 @@
                                 <p>4.9</p>
                             </div>
                         </div>
-                        <p class="text-[14px] font-normal text-[#333333] mt-3">Lorem ipsum dolor sit amet consectetur</p>
+                        <p class="text-[14px] font-normal text-[#333333] mt-3">Lorem ipsum dolor sit amet consectetur
+                        </p>
+                        <p class="text-[#4B2C7A] font-bold mt-3">#20,000</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-[15px] shadow relative">
+                    <div class="absolute flex items-center gap-2 right-3 top-16 md:top-28">
+                        <div class="bg-white p-1.5 rounded-[50%] cursor-pointer">
+                            <img src="assets/sm-heart.png" alt="">
+                        </div>
+                        <div class="bg-white p-1.5 rounded-[50%] cursor-pointer">
+                            <img src="assets/eye.png" alt="">
+                        </div>
+                        <div class="bg-white p-1.5 rounded-[50%] cursor-pointer">
+                            <img src="assets/sm-cart.png" alt="">
+                        </div>
+                    </div>
+                    <img src="assets/pr1.png" alt="Product" class="w-full" />
+                    <div class="p-2">
+                        <div class="flex justify-between items-center w-[94%]">
+                            <p class="text-[#4B2C7A] font-bold">Lorem Ipsium</p>
+                            <div class="flex items-center gap-1 w-[30px] h-[30px]">
+                                <img src="assets/star.png" alt="" class="w-[20px] h-[20px]">
+                                <p>4.9</p>
+                            </div>
+                        </div>
+                        <p class="text-[14px] font-normal text-[#333333] mt-3">Lorem ipsum dolor sit amet consectetur
+                        </p>
                         <p class="text-[#4B2C7A] font-bold mt-3">#20,000</p>
                     </div>
                 </div>
@@ -273,7 +424,8 @@
                                 <p>4.9</p>
                             </div>
                         </div>
-                        <p class="text-[14px] font-normal text-[#333333] mt-3">Lorem ipsum dolor sit amet consectetur</p>
+                        <p class="text-[14px] font-normal text-[#333333] mt-3">Lorem ipsum dolor sit amet consectetur
+                        </p>
                         <p class="text-[#4B2C7A] font-bold mt-3">#20,000</p>
                     </div>
                 </div>
