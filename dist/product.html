@@ -28,13 +28,12 @@
 
     <div data-include="header.html"></div>
 
-    <section class="px-[10%] py-10">
+    <section class="px-[4%] md:px-[10%] py-10">
         <!-- Breadcrumb -->
-        <nav class="text-[15px] text-gray-500 mb-10 flex space-x-3 items-center">
+        <nav class="text-[13.5px] md:text-[15px] -mt-4 md:mt-0 text-gray-500 mb-10 flex space-x-3 items-center">
             <a href="#" class="hover:underline">Home <span>></span></a> 
             <a href="#" class="hover:underline">Catalog <span>></span></a>
             <a href="#" class="hover:underline">Necklace <span>></span></a>
-            <a href="#" class="hover:underline">Bracelets <span>></span></a>
             <a href="#" class="hover:underline">Bracelets <span>></span></a>
             <span class="text-black font-medium">Earrings <span>></span></span>
         </nav>
@@ -45,7 +44,7 @@
             <!-- Image Gallery -->
             <div class="flex gap-[3%] space-x-4">
                 <!-- Thumbnails -->
-                <div class="flex flex-col space-y-3 w-[17.5%]">
+                <div class="flex flex-col space-y-3 w-[16.5%] md:w-[17.5%]">
                     <template x-for="(img, index) in images" :key="index">
                         <img :src="img" @click="activeImage = img"
                             class="w-full object-cover border cursor-pointer rounded-md"
@@ -53,7 +52,7 @@
                     </template>
                 </div>
                 <!-- Main Image -->
-                <div class="flex-1 w-[45%]">
+                <div class="flex-1 w-[50%] md:w-[45%]">
                     <img :src="activeImage" class="rounded-xl object-cover w-full">
                 </div>
             </div>
