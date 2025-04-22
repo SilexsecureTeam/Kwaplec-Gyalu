@@ -54,14 +54,14 @@
         </div>
 
         <h2 class="font-semibold mb-4">Shipment Method</h2>
-        <div class="rounded space-y-3 playfair">
+        <div class="rounded space-y-3 playfair text-[13.5px] md:text-[15px]">
           <!-- Option 1 -->
           <label class="flex items-center justify-between px-4 py-3 cursor-pointer border rounded-lg">
             <div class="flex items-center gap-4">
               <input type="radio" name="shipping" value="free" class="text-purple-600" x-model="selected">
-              <div class="flex items-center gap-[71px]">
+              <div class="flex items-center gap-[30px] md:gap-[71px]">
                 <div class="font-medium">Free</div>
-                <div class="text-sm text-gray-500">Regularly shipment</div>
+                <div class="text-sm text-gray-500 max-w-[70%]">Regularly shipment</div>
               </div>
             </div>
             <div class="text-sm font-medium text-gray-700">17 Oct, 2023</div>
@@ -71,9 +71,9 @@
           <label class="flex items-center justify-between px-4 py-3 cursor-pointer border rounded-lg">
             <div class="flex items-center gap-4">
               <input type="radio" name="shipping" value="fast" class="text-purple-600" x-model="selected">
-              <div class="flex items-center gap-10">
+              <div class="flex items-center gap-[12px] md:gap-10">
                 <div class="font-medium">#20.000</div>
-                <div class="text-sm text-gray-500">Get your delivery as soon as possible</div>
+                <div class="text-sm text-gray-500 max-w-[65%]">Get your delivery as soon as possible</div>
               </div>
             </div>
             <div class="text-sm font-medium text-gray-700">1 Oct, 2023</div>
@@ -84,9 +84,9 @@
             <div class="flex items-center gap-4 w-full">
               <input type="radio" name="shipping" value="schedule" class="text-purple-600" x-model="selected">
               <div class="flex justify-between items-center w-full">
-                <div class="flex items-center gap-[35px]">
+                <div class="flex items-center gap-[12px] md:gap-[35px]">
                   <div class="font-medium">Schedule</div>
-                  <div class="text-sm text-gray-500">Pick a date when you want to get your delivery</div>
+                  <div class="text-sm text-gray-500 max-w-[65%]">Pick a date when you want to get your delivery</div>
                 </div>
                 <div class="relative">
                   <button type="button" @click="showDate = !showDate" class="text-sm font-medium text-gray-700 rounded">
@@ -98,7 +98,7 @@
             </div>
           </label>
         </div>
-        <div class="mt-10 flex justify-end gap-4">
+        <div class="mt-10 flex justify-center md:justify-end gap-4">
             <a href="address.html"></a><button class="px-14 py-2.5 border border-[#4B2C7A] rounded text-[#4B2C7A]">Back</button></a>
             <a href="payment.html"><button class="px-14 py-2.5 bg-[#D4AF37] text-white rounded">Next</button></a>
         </div>

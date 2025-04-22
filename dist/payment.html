@@ -55,7 +55,7 @@
 
     <div class="px-[4%] md:px-[10%] mb-10 grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="p-6 rounded shadow">
-            <h2 class="font-semibold text-lg mb-4">Summary</h2>
+            <h2 class="font-bold text-lg mb-4">Summary</h2>
             <template x-for="item in cart" :key="item.name">
                 <div class="flex items-center justify-between mb-2 bg-[#F6F6F6] rounded-lg px-4 py-4" >
                     <div class="flex items-center gap-4">
@@ -99,7 +99,7 @@
 
         <!-- Payment -->
         <div class="p-6">
-            <h2 class="font-semibold text-lg mb-4">Payment</h2>
+            <h2 class="font-bold text-lg mb-4">Payment</h2>
             <div class="flex gap-6 text-[#717171] pb-2 mb-4 text-sm">
                 <button :class="activeTab === 'card' ? 'font-semibold text-black border-b-2 border-black pb-1' : ''"
                     @click="activeTab = 'card'">Credit Card</button>
@@ -135,9 +135,9 @@
                 <p class="text-sm text-gray-600">Selected method: <span x-text="activeTab"></span> (not implemented)</p>
             </template>
 
-            <div class="mt-6 flex justify-between max-w-md">
-                <a href="shipping.html"><button class="px-20 py-2 border border-[#8064A2] text-[#8064A2] rounded">Back</button></a>
-                <button class="px-20 py-2 bg-[#D1A954] text-white rounded">Pay</button>
+            <div class="mt-6 flex gap-5 justify-start sm:justify-between max-w-md">
+                <a href="shipping.html"><button class="px-14 sm:px-20 py-2 border border-[#8064A2] text-[#8064A2] rounded">Back</button></a>
+                <button class="px-14 sm:px-20 py-2 bg-[#D1A954] text-white rounded">Pay</button>
             </div>
         </div>
     </div>
