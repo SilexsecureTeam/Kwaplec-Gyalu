@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shipping</title>
+    <script src="https://unpkg.com/alpinejs" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Londrina+Sketch&family=Monoton&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <style>
+        .monoton {
+            font-family: 'Monoton', cursive;
+        }
+
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+
+<body x-data="productPage()">
+
+    <div data-include="header.html"></div>
+
+    <div class="mt-10 mb-10 px-[4%] md:px-[10.5%]" x-data="shipmentOptions()">
+        <div class="flex justify-between items-center mb-10 w-[100%] text-sm text-gray-500">
+            <a href="address.html" class="flex gap-2 items-center cursor-pointer opacity-40">
+                <img src="assets/adress.png" alt="" />
+                <div>
+                    <div class="text-black text-[13px] font-semibold">Step 1</div>
+                    <div class="text-black text-[15px] font-semibold">Address</div>
+                </div>
+            </a>
+            <a href="shipping.htmla" class="flex gap-2 items-center cursor-pointer">
+                <img src="assets/shipping.png" alt="" />
+                <div>
+                    <div class="text-black text-[13px] font-semibold">Step 2</div>
+                    <div class="text-black text-[15px] font-semibold">Shipping</div>
+                </div>
+            </a>
+            <a href="payment.html" class="flex gap-2 items-center opacity-40 cursor-pointer">
+                <img src="assets/payment.png" alt="" />
+                <div>
+                    <div class="text-black text-[13px] font-semibold">Step 3</div>
+                    <div class="text-black text-[15px] font-semibold">Payment</div>
+                </div>
+            </a>
+        </div>
+
+        <h2 class="font-semibold mb-4">Shipment Method</h2>
+        <div class="rounded space-y-3 playfair">
+          <!-- Option 1 -->
+          <label class="flex items-center justify-between px-4 py-3 cursor-pointer border rounded-lg">
+            <div class="flex items-center gap-4">
+              <input type="radio" name="shipping" value="free" class="text-purple-600" x-model="selected">
+              <div class="flex items-center gap-[71px]">
+                <div class="font-medium">Free</div>
+                <div class="text-sm text-gray-500">Regularly shipment</div>
+              </div>
+            </div>
+            <div class="text-sm font-medium text-gray-700">17 Oct, 2023</div>
+          </label>
+      
+          <!-- Option 2 -->
+          <label class="flex items-center justify-between px-4 py-3 cursor-pointer border rounded-lg">
+            <div class="flex items-center gap-4">
+              <input type="radio" name="shipping" value="fast" class="text-purple-600" x-model="selected">
+              <div class="flex items-center gap-10">
+                <div class="font-medium">#20.000</div>
+                <div class="text-sm text-gray-500">Get your delivery as soon as possible</div>
+              </div>
+            </div>
+            <div class="text-sm font-medium text-gray-700">1 Oct, 2023</div>
+          </label>
+      
+          <!-- Option 3 -->
+          <label class="flex items-center justify-between px-4 py-3 cursor-pointer border rounded-lg">
+            <div class="flex items-center gap-4 w-full">
+              <input type="radio" name="shipping" value="schedule" class="text-purple-600" x-model="selected">
+              <div class="flex justify-between items-center w-full">
+                <div class="flex items-center gap-[35px]">
+                  <div class="font-medium">Schedule</div>
+                  <div class="text-sm text-gray-500">Pick a date when you want to get your delivery</div>
+                </div>
+                <div class="relative">
+                  <button type="button" @click="showDate = !showDate" class="text-sm font-medium text-gray-700 rounded">
+                    <span x-text="scheduledDate ? scheduledDate : 'Select Date'"></span>
+                  </button>
+                  <input type="date" x-show="showDate" @change="updateDate($event)" class="absolute top-10 left-0 rounded px-2 py-1 text-sm" />
+                </div>
+              </div>
+            </div>
+          </label>
+        </div>
+        <div class="mt-10 flex justify-end gap-4">
+            <a href="address.html"></a><button class="px-14 py-2.5 border border-[#4B2C7A] rounded text-[#4B2C7A]">Back</button></a>
+            <a href="payment.html"><button class="px-14 py-2.5 bg-[#D4AF37] text-white rounded">Next</button></a>
+        </div>
+      </div>
+      
+
+    <div data-include="footer.html"></div>
+
+    <script>
+        function shipmentOptions() {
+          return {
+            selected: 'free',
+            showDate: false,
+            scheduledDate: '',
+            updateDate(e) {
+              this.scheduledDate = new Date(e.target.value).toLocaleDateString('en-GB', {
+                day: '2-digit', month: 'short', year: 'numeric'
+              });
+              this.showDate = false;
+            }
+          }
+        }
+      </script>
+
+</body>
+
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <script src="https://unpkg.com/alpinejs" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Londrina+Sketch&family=Monoton&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <style>
+        .monoton {
+            font-family: 'Monoton', cursive;
+        }
+
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+
+<body x-data="productPage()">
+
+    <div data-include="header.html"></div>
+
+
+    <section class="w-full px-[10%] playfair mb-10">
+        <div class="mt-10" data-include="nav.html"></div>
+        <h2 class="text-lg font-semibold mb-4">Shopping Cart</h2>
+
+        <div class="flex flex-col md:flex-row gap-6">
+
+            <!-- Left Side: Cart Items -->
+            <div class="w-full md:w-2/3">
+
+                <div class="w-full text-[14px] text-[#949494] text-nowrap">
+                    <div class="grid grid-cols-5 bg-[#D4AF37] text-[16px] text-white font-medium py-3 px-10 rounded-t">
+                        <div class="col-span-2">Product</div>
+                        <div class="col-span-1 text-center">Price</div>
+                        <div class="col-span-1 text-center">Quantity</div>
+                        <div class="col-span-1 text-right">Total</div>
+                    </div>
+
+                    <!-- Cart Item Row -->
+                    <div class="grid grid-cols-5 items-center border-b p-4 pr-5">
+                        <div class="flex gap-4 items-center col-span-2">
+                            <button class="text-xl font-bold">&times;</button>
+                            <img src="assets/cart1.png" alt="Vintage Bracelet" class="w-12 h-12 object-cover rounded" />
+                            <span class="text-[#3D3D3D] font-medium">Vintage Bracelet</span>
+                        </div>
+                        <div class="text-center">₦18,000</div>
+                        <div class="text-center">
+                            <div class="inline-flex border rounded-[20px] items-center">
+                                <button class="px-2 counter-btn" data-action="decrement">−</button>
+                                <span class="px-2 quantity">1</span>
+                                <button class="px-2 counter-btn" data-action="increment">+</button>
+                              </div>
+                        </div>
+                        <div class="text-right">₦18,000</div>
+                    </div>
+
+                    <!-- Copy the block above for additional items -->
+                    <div class="grid grid-cols-5 items-center border-b p-4 pr-5">
+                        <div class="col-span-2 flex gap-4 items-center">
+                            <button class="text-xl font-bold text-gray-600">&times;</button>
+                            <img src="assets/cart2.png" alt="Sterling Gold" class="w-12 h-12 object-cover rounded" />
+                            <span class="text-[#3D3D3D] font-medium">Sterling Gold</span>
+                        </div>
+                        <div class="text-center">₦29,000</div>
+                        <div class="text-center">
+                            <div class="inline-flex border rounded-[20px] items-center">
+                                <button class="px-2 counter-btn" data-action="decrement">−</button>
+                                <span class="px-2 quantity">1</span>
+                                <button class="px-2 counter-btn" data-action="increment">+</button>
+                              </div>
+                        </div>
+                        <div class="text-right">₦29,000</div>
+                    </div>
+                    <div class="grid grid-cols-5 items-center border-b p-4 pr-5">
+                        <div class="col-span-2 flex gap-4 items-center">
+                            <button class="text-xl font-bold text-gray-600">&times;</button>
+                            <img src="assets/cart1.png" alt="Vintage Bracelet" class="w-12 h-12 object-cover rounded" />
+                            <span class="text-[#3D3D3D] font-medium">Vintage Bracelet</span>
+                        </div>
+                        <div class="text-center">₦18,000</div>
+                        <div class="text-center">
+                            <div class="inline-flex border rounded-[20px] items-center">
+                                <button class="px-2 counter-btn" data-action="decrement">−</button>
+                                <span class="px-2 quantity">1</span>
+                                <button class="px-2 counter-btn" data-action="increment">+</button>
+                              </div>
+                        </div>
+                        <div class="text-right">₦18,000</div>
+                    </div>
+
+                    <!-- Copy the block above for additional items -->
+                    <div class="grid grid-cols-5 items-center border-b p-4 pr-5">
+                        <div class="col-span-2 flex gap-4 items-center">
+                            <button class="text-xl font-bold text-gray-600">&times;</button>
+                            <img src="assets/cart2.png" alt="Sterling Gold" class="w-12 h-12 object-cover rounded" />
+                            <span class="text-[#3D3D3D] font-medium">Sterling Gold</span>
+                        </div>
+                        <div class="text-center">₦29,000</div>
+                        <div class="text-center">
+                            <div class="inline-flex border rounded-[20px] items-center">
+                                <button class="px-2 counter-btn" data-action="decrement">−</button>
+                                <span class="px-2 quantity">1</span>
+                                <button class="px-2 counter-btn" data-action="increment">+</button>
+                              </div>
+                        </div>
+                        <div class="text-right">₦29,000</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Right Side: Summary -->
+            <div class="w-full md:w-1/3 text-[14px] border p-4 rounded shadow-sm">
+                <div>
+                    <label for="discount">Discount Code/Promo Code</label>
+                    <input id="discount" type="text" placeholder="Code"
+                        class="outline-none w-full border px-3 py-2 mb-3 rounded" />
+                </div>
+                <div class="mb-3 relative">
+                    <label for="card">Your Bonus card number</label>
+                    <input id="card" type="text" placeholder="Enter Card Number"
+                        class="outline-none flex-grow border px-3 py-2 rounded w-full" />
+                    <button class="absolute top-7  right-5 bg-transparent text-[13px] text-black px-4 py-0.5 rounded"
+                    style="border: 1px solid #D4AF37;">Apply</button>
+                </div>
+
+                <div class="space-y-3 text-sm mt-7">
+                    <div class="flex justify-between">
+                        <span><b>Subtotal</b></span>
+                        <span class="font-bold">₦2347</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Estimated Tax</span>
+                        <span class="font-bold">₦50</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Estimated shipping & Handling</span>
+                        <span class="font-bold">₦29</span>
+                    </div>
+                    <div class="flex justify-between border-t pt-2 mt-3">
+                        <span class="font-semibold"><b>Total</b></span>
+                        <span class="font-bold">₦2426</span>
+                    </div>
+                </div>
+
+                <a href="address.html"><button class="mt-4 w-full bg-[#D4AF37] text-white py-3 rounded">Checkout</button></a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <div data-include="footer.html"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const MIN_QTY = 1;
+          const MAX_QTY = 10;
+      
+          document.querySelectorAll(".counter-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+              const action = btn.dataset.action;
+              const quantityElem = btn.parentElement.querySelector(".quantity");
+              let currentQty = parseInt(quantityElem.textContent, 10);
+      
+              if (action === "increment" && currentQty < MAX_QTY) {
+                currentQty++;
+              } else if (action === "decrement" && currentQty > MIN_QTY) {
+                currentQty--;
+              }
+      
+              quantityElem.textContent = currentQty;
+            });
+          });
+        });
+      </script>
+</body>
+
+</html>

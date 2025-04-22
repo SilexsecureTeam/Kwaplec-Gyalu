@@ -11,6 +11,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Londrina+Sketch&family=Monoton&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <style>
         .monoton {
             font-family: 'Monoton', cursive;
@@ -27,66 +29,90 @@
     <div data-include="header.html"></div>
 
     <!-- Hero Section -->
-    <section class="flex justify-between items-center bg-[#E5E5E5] pl-[3%] md:pl-[10%]  py-10 md:py-0">
-        <div class="max-w-[40%]">
-            <h1 class="text-5xl font-normal text-[#4B2C7A] monoton font-monoton">Jewelry that <br> tells <br>
-                your story</h1>
-            <p class=" mb-10 mt-5 text-[#4B2C7A]">Timeless Elegance, Crafted for you</p>
-            <button class="text-[#4B2C7A] border px-6 py-2 text-[14px] font-bold rounded-[4px]"
-                style="border: 1px solid #4B2C7A;">Shop Now </button>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <section
+                class=" swiper-slide flex justify-between items-center bg-[#E5E5E5] pl-[3%] md:pl-[10%]  py-10 md:py-0">
+                <div class="w-full md:max-w-[40%] ">
+                    <h1 class="text-5xl font-normal text-[#4B2C7A] monoton font-monoton">Jewelry that <br> tells <br>
+                        your story</h1>
+                    <p class=" mb-10 mt-5 text-[#4B2C7A]">Timeless Elegance, Crafted for you</p>
+                    <a href="collection.html"><button class="text-[#4B2C7A] border px-6 py-2 text-[14px] font-bold rounded-[4px]"
+                        style="border: 1px solid #4B2C7A;">Shop Now </button></a>
+                </div>
+                <div class="max-w-[55%] hidden md:block">
+                        <img src="assets/heroJewel.png" alt="Hero Image" class="w-full mx-auto mt-6" />
+                </div>
+            </section>
+            <section
+                class="swiper-slide flex justify-between items-center w-full bg-[#D4AF37] pl-[3%] md:pl-[10%]  py-10 md:py-0">
+                <div class="w-full md:max-w-[40%]">
+                    <h1 class="text-5xl font-normal text-[#ffffff]">Jewelry that <br> tells <br>
+                        your story</h1>
+                    <p class=" mb-10 mt-5 text-[#ffffff]">Timeless Elegance, Crafted for you</p>
+                    <a href="collection.html" ><button class="text-[#ffffff] border px-6 py-2 text-[14px] font-bold rounded-[4px]"
+                        style="border: 1px solid #ffffff;">Shop Now </button></a>
+                </div>
+                <div class="max-w-[55%] hidden md:block">
+                    <img src="assets/heroJewel2.png" alt="Hero Image" class="w-full mx-auto" />
+                </div>
+            </section>
         </div>
-        <div class="max-w-[55%]">
-            <img src="assets/heroJewel.png" alt="Hero Image" class="mx-auto mt-6" />
-        </div>
-    </section>
+    </div>
 
-    <section class="flex-col md:flex md:flex-row justify-between">
-        <div class="w-[100%] md:w-[50%] md:p-4 mobile-width-full">
-            <div class="flex items-center justify-between w-full">
-                <div class="w-[50%] md:w-auto">
+    <section class="flex-col md:flex md:flex-row justify-between bg-[#EDEDED]">
+        <div class="w-[100%] md:w-[50%] mobile-width-full">
+            <div class="flex items-center justify-between w-full bg-white md:pb-10">
+                <div class="w-[60%]">
                     <img src="assets/neck1.png" alt="Necklaces" class="w-full" />
                 </div>
-                <div class="w-[50%] md:w-auto">
+                <div class="w-[40%] md:pr-10">
                     <h2 class="text-[26px] font-semibold">Necklaces</h2>
-                    <p class="text-[15px] text-[#909090] mt-2">Incredibly powerful CPUs, GPUs, and an SSD with
+                    <p class="text-[14px] text-[#909090] mt-2">Incredibly powerful CPUs, GPUs, and an SSD with
                         integrated I/O will redefine your PlayStation
                         experience.</p>
                 </div>
             </div>
-            <div class="flex items-center justify-between">
-                <div class="w-[50%] flex items-center gap-1 md:gap-3">
+            <div class="flex items-center justify-between -mt-4 md:mt-0 playfair">
+                <div class="w-[46%] md:w-[50%] flex items-center gap-1 md:gap-3">
                     <img src="assets/neck2.png" alt="Necklaces" class="md:mb-4" />
-                    <div class="-ml-6 md:ml-auto">
-                        <h2 class="text-[18px] font-normal">Rings</h2>
-                        <p class="text-[14px] text-[#909090] mt-2">Computational audio. Listen, it's powerful</p>
+                    <div class="-ml-6 md:ml-auto md:pr-5">
+                        <h2 class="text-[16px] font-normal">Rings</h2>
+                        <p class="text-[12.5px] text-[#909090] mt-2">Computational audio. Listen, it's powerful</p>
                     </div>
                 </div>
-                <div class="w-[43%] md:w-[50%] relative text-white">
+                <div class="w-[47%] md:w-[50%] relative text-white flex">
                     <img src="assets/braceletbg.png" alt="Necklaces" class="md:mb-4 w-full" />
-                    <div class="absolute top-[20%] md:top-[35%] w-[70%] md:max-w-[50%] right-2">
-                        <h2 class="text-[18px] font-normal ">Bracelets</h2>
-                        <p class="text-[14px] text-[#909090]">An immersive way to experience entertainment</p>
+                    <div
+                        class="absolute top-0 bg-[#4B2C7A] justify-center h-full md:h-[94%] w-[50%] md:max-w-[50%] right-0 p-2 py-3 md:py-[25%] items-center">
+                        <h2 class="text-[16px] font-normal mb-1 ">Bracelets</h2>
+                        <p class="text-[12.5px] text-[#909090] leading-[1.2]">An immersive way to experience
+                            entertainment</p>
                     </div>
                 </div>
             </div>
         </div>
         <div
-            class="w-[100%] -mt-[35px] md:mt-0 md:w-[50%] pl-6 text-black text-3xl font-normal flex justify-between items-center">
-            <div class="w-[57%] md:w-[50%]">
-                <h2 class="text-[40px] mb-3 font-light">Earrings</h2>
+            class="w-[100%] -mt-[60px] md:mt-0 md:w-[50%] pl-6 text-black text-3xl font-normal flex justify-between items-center">
+            <div class="w-[53%] md:w-[50%]">
+                <h2 class="text-[44px] mb-3 font-light">Earrings</h2>
                 <p class="text-[14px] text-[#909090] leading-[1.5]">The new 15‑inch MacBook Air makes room for more of
                     what you love with a spacious Liquid Retina display.</p>
                 <button class="mt-4 text-black text-[14px] font-medium border px-7 py-1 rounded-[4px]">Shop Now</button>
             </div>
-            <div class="w-[40%] md:w-auto">
+            <div class="w-[46%] md:w-auto">
                 <img src="assets/big-earing.png" alt="Earrings" class="mb-4" />
             </div>
         </div>
     </section>
 
     <section class="py-10 px-[4%] md:px-[10%] playfair">
-        <div>
+        <div class="flex justify-between items-center">
             <h2 class="text-2xl font-medium mb-6">Browse By Category</h2>
+            <div class="flex items-center gap-3">
+                <img src="assets/arrow-left.png" alt="" class="w-[8px] h-[14px]">
+                <img src="assets/arrow-right.png" alt="" class="w-[8px] h-[14px]">
+            </div>
         </div>
         <div class="grid grid-cols-3 md:grid-cols-6 gap-4">
             <div class="bg-[#EDEDED] p-4 rounded text-center flex text-[15px] flex-col justify-center items-center">
@@ -329,8 +355,7 @@
         </div>
     </section>
 
-    <section
-        class="py-10 bg-gray-50 playfair px-[4%] md:px-[10%] flex flex-col md:flex-row justify-between items-center">
+    <section class="py-10 bg-white playfair px-[4%] md:px-[10%] flex flex-col md:flex-row justify-between items-center">
         <div class="w-[100%] md:w-[40%]">
             <h2 class="text-3xl text-[#4B2C7A] font-bold mb-6">Learn About Us And What Sets Us Apart From Others</h2>
             <p class="mb-6 text-[14px]">At Gyalu, we create more than just luxury jewelry, we craft timeless pieces that
@@ -410,6 +435,23 @@
     <div data-include="footer.html"></div>
 
     <script src="script.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        const swiper = new Swiper(".mySwiper", {
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
+
 
 </body>
 

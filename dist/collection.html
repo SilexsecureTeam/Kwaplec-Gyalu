@@ -26,25 +26,15 @@
 <body class="">
     <div data-include="header.html"></div>
 
-    <div x-data="{ sidebarOpen: false }" class="container mx-auto px-[4%] md:px-[8.5%] py-8 grid md:grid-cols-12 gap-6 playfair text-[#333333]">
-
-        <button @click="sidebarOpen = !sidebarOpen"
-            class="md:hidden fixed top-4 left-4 z-50 p-2 bg-white rounded shadow" aria-label="Toggle menu">
-            <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-        </button>
-
-
+    <div x-data="{ sidebarOpen: false }"
+        class="container mx-auto px-[4%] md:px-[8.5%] py-8 grid md:grid-cols-12 gap-6 playfair text-[#333333]">
         <!-- Sidebar -->
         <aside x-show="sidebarOpen || window.innerWidth >= 768 "
-        @click.away="if (window.innerWidth < 768) sidebarOpen = false"
-        :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full'"
-        class="fixed md:relative inset-y-0 left-0 z-40 w-fit bg-white md:bg-transparent transform transition-transform duration-300 ease-in-out
-        md:translate-x-0 md:shadow-none overflow-y-auto px-[7%] md:px-0 pt-24 md:pt-0 col-span-3" >
+            @click.away="if (window.innerWidth < 768) sidebarOpen = false"
+            :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full'" class="fixed md:relative inset-y-0 left-0 z-40 w-fit bg-white md:bg-transparent transform transition-transform duration-300 ease-in-out
+        md:translate-x-0 md:shadow-none overflow-y-auto px-[7%] md:px-0 pt-24 md:pt-0 col-span-3">
 
-            <div class="mb-6" x-data="{
+            <div class="mb-20" x-data="{
        min: 5000, 
        max: 50000,
        minRange: 0, 
@@ -109,7 +99,8 @@
             <div class="mb-6">
                 <h2 class="font-semibold mb-2 text-[18px] text-[#4B2C7A]">Lorem Ipsum</h2>
                 <div class="w-full h-[1px] bg-black opacity-30"></div>
-                <input type="text" placeholder="Search" class="border w-full px-2 py-1 text-sm outline-none mt-4 rounded-md">
+                <input type="text" placeholder="Search"
+                    class="border w-full px-2 py-1 text-sm outline-none mt-4 rounded-md">
                 <ul class="text-sm space-y-1 mt-4">
                     <li><input type="checkbox"> Lorem Ipsum (3)</li>
                     <li><input type="checkbox"> Lorem Ipsum (4)</li>
@@ -202,14 +193,23 @@
         <!-- Main Content -->
         <main class="md:col-span-9 px-5">
             <div class="mb-6">
-                <h1 class="text-2xl font-semibold mb-5">Our Collection Of Products</h1>
+                <button @click="sidebarOpen = !sidebarOpen" class="md:hidden -mt-5 z-50 p-2 shadow"
+                    aria-label="Toggle menu">
+                    <svg class="w-4 h-4 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+                <div class="flex justify-between">
+                    <h1 class="text-2xl font-semibold mt-5 md:mt-0 mb-5">Our Collection Of Products</h1>
+                </div>
                 <p class="text-sm text-[#333333]">Showing 1–09 of 24 results</p>
                 <p class="text-sm opacity-70">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                     tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
 
             <!-- Products Grid -->
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-10">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-10">
                 <div class="bg-white rounded-[15px] shadow relative">
                     <div class="absolute flex items-center gap-2 right-3 top-16 md:top-28">
                         <div class="bg-white p-1.5 rounded-[50%] cursor-pointer">

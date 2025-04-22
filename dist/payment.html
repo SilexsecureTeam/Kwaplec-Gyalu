@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment</title>
+    <script src="https://unpkg.com/alpinejs" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Londrina+Sketch&family=Monoton&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <style>
+        .monoton {
+            font-family: 'Monoton', cursive;
+        }
+
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+
+<body x-data="paymentSection()">
+
+    <div data-include="header.html"></div>
+
+    <div class="flex px-[4%] mt-10 md:px-[10.5%] justify-between items-center mb-10 w-[100%] text-sm text-gray-500">
+        <a href="address.html" class="flex gap-2 items-center cursor-pointer opacity-40">
+            <img src="assets/adress.png" alt="" />
+            <div>
+                <div class="text-black text-[13px] font-semibold">Step 1</div>
+                <div class="text-black text-[15px] font-semibold">Address</div>
+            </div>
+        </a>
+        <a href="shipping.html" class="flex gap-2 items-center opacity-40 cursor-pointer">
+            <img src="assets/shipping.png" alt="" />
+            <div>
+                <div class="text-black text-[13px] font-semibold">Step 2</div>
+                <div class="text-black text-[15px] font-semibold">Shipping</div>
+            </div>
+        </a>
+        <a href="payment.html" class="flex gap-2 items-center cursor-pointer">
+            <img src="assets/payment.png" alt="" />
+            <div>
+                <div class="text-black text-[13px] font-semibold">Step 3</div>
+                <div class="text-black text-[15px] font-semibold">Payment</div>
+            </div>
+        </a>
+    </div>
+
+
+    <div class="px-[4%] md:px-[10%] mb-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="p-6 rounded shadow">
+            <h2 class="font-semibold text-lg mb-4">Summary</h2>
+            <template x-for="item in cart" :key="item.name">
+                <div class="flex items-center justify-between mb-2 bg-[#F6F6F6] rounded-lg px-4 py-4" >
+                    <div class="flex items-center gap-4">
+                        <img :src="item.img" alt="item" class="w-10 h-10">
+                        <p class="text-sm font-medium" x-text="item.name"></p>
+                    </div>
+                    <span class="text-sm font-medium" x-text="'#' + item.price"></span>
+                </div>
+            </template>
+            
+
+            <div class="mt-5">
+                <p class="text-sm text-[#545454]">Address</p>
+                <p class="mt-2 playfair">1131 Dusty Townline, Jacksonville, TX 40322</p>
+            </div>
+
+            <div class="mt-5">
+                <p class="text-sm text-gray-600">Shipment method</p>
+                <p class="mt-2 playfair">Free</p>
+            </div>
+
+            <div class="mt-8 space-y-4 text-sm">
+                <div class="flex justify-between">
+                    <span><b>Subtotal</b></span>
+                    <span>#20,000</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="playfair">Estimated Tax</span>
+                    <span>#50</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="playfair">Estimated shipping & Handling</span>
+                    <span>#29</span>
+                </div>
+                <div class="flex justify-between font-bold mt-2">
+                    <span><b>Total</b></span>
+                    <span><b>#24,260</b></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Payment -->
+        <div class="p-6">
+            <h2 class="font-semibold text-lg mb-4">Payment</h2>
+            <div class="flex gap-6 text-[#717171] pb-2 mb-4 text-sm">
+                <button :class="activeTab === 'card' ? 'font-semibold text-black border-b-2 border-black pb-1' : ''"
+                    @click="activeTab = 'card'">Credit Card</button>
+                <button :class="activeTab === 'paypal' ? 'font-semibold text-black border-b-2 border-black pb-1' : ''"
+                    @click="activeTab = 'paypal'">PayPal</button>
+                <button :class="activeTab === 'paypalCredit' ? 'font-semibold text-black border-b-2 border-black pb-1' : ''"
+                    @click="activeTab = 'paypalCredit'">PayPal Credit</button>
+            </div>
+
+            <!-- Credit Card Form -->
+            <template x-if="activeTab === 'card'">
+                <div >
+                    <img src="assets/Credit-Card.png" alt="">
+
+                    <form class="space-y-4 mt-7 max-w-md">
+                        <input type="text" placeholder="Cardholder Name"
+                            class="w-full border px-3 py-2 rounded text-sm outline-none playfair">
+                        <input type="text" placeholder="Card Number" class="w-full border px-3 py-2 rounded text-sm outline-none playfair">
+                        <div class="flex gap-2 playfair">
+                            <input type="text" placeholder="Exp. Date" class="w-1/2 border px-3 py-2 rounded text-sm outline-none">
+                            <input type="text" placeholder="CVV" class="w-1/2 border px-3 py-2 rounded text-sm outline-none">
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <input type="checkbox" id="billingAddress" checked class="outline-none">
+                            <label for="billingAddress" class="text-sm">Same as billing address</label>
+                        </div>
+                    </form>
+                </div>
+            </template>
+
+            <!-- Placeholder for other payment methods -->
+            <template x-if="activeTab !== 'card'">
+                <p class="text-sm text-gray-600">Selected method: <span x-text="activeTab"></span> (not implemented)</p>
+            </template>
+
+            <div class="mt-6 flex justify-between max-w-md">
+                <a href="shipping.html"><button class="px-20 py-2 border border-[#8064A2] text-[#8064A2] rounded">Back</button></a>
+                <button class="px-20 py-2 bg-[#D1A954] text-white rounded">Pay</button>
+            </div>
+        </div>
+    </div>
+
+    <div data-include="footer.html"></div>
+
+    <script>
+        function paymentSection() {
+            return {
+                activeTab: 'card',
+                cart: [
+                    { name: 'Lorem Ipsum Gold', price: '17,000', img: 'assets/payment1.png' },
+                    { name: 'Lorem Ipsum Silver', price: '23,000', img: 'assets/payment2.png' },
+                    { name: 'Lorem Gold', price: '10,000', img: 'assets/payment3.png' },
+                ]
+            };
+        }
+    </script>
+</body>
+
+</html>
