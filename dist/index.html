@@ -81,7 +81,7 @@
                         <p class="text-[12.5px] text-[#909090] mt-2">Computational audio. Listen, it's powerful</p>
                     </div>
                 </div>
-                <div class="w-[47.5%] md:w-[50%] h-full relative text-white">
+                <div class="w-[47.5%] md:w-[50%] h-full md:!h-[223px] md:!mt-[73px] relative text-white">
                     <img src="assets/braceletbg.png" alt="Necklaces" class="md:mb-0 w-full h-full" />
                     <div
                         class="absolute top-0 bg-[#4B2C7A] justify-center h-full md:h-full w-[50%] md:max-w-[50%] right-0 p-2 py-3 md:py-[25%] items-center">
@@ -94,13 +94,13 @@
         </div>
         <div
             class="w-[100%] mt-[0px] md:mt-0 md:w-[50%] pl-6 text-black text-3xl font-normal flex justify-between items-center">
-            <div class="w-[53%] md:w-[50%]">
+            <div class="w-[50%] md:w-[50%]">
                 <h2 class="text-[44px] mb-3 font-light">Earrings</h2>
                 <p class="text-[14px] text-[#909090] leading-[1.5]">The new 15‑inch MacBook Air makes room for more of
                     what you love with a spacious Liquid Retina display.</p>
                 <button class="mt-4 text-black text-[14px] font-medium border px-7 py-1 rounded-[4px]">Shop Now</button>
             </div>
-            <div class="w-[46%] md:w-[49%] h-full">
+            <div class="w-[50%] md:w-[49%] h-full">
                 <img src="assets/big-earing.png" alt="Earrings" class="mb-0 md:h-full" />
             </div>
         </div>
@@ -451,6 +451,20 @@
             },
         });
     </script>
+
+<script>
+    const mobileSearchBtn = document.getElementById('mobileSearchBtn');
+    const mobileSearch    = document.getElementById('mobileSearch');
+    const closeSearch     = document.getElementById('closeMobileSearch');
+
+    mobileSearchBtn.addEventListener('click', () => {
+      mobileSearch.classList.remove('-translate-y-full');
+    });
+
+    closeSearch.addEventListener('click', () => {
+      mobileSearch.classList.add('-translate-y-full');
+    });
+  </script>
 
 
 </body>
